@@ -46,7 +46,7 @@ Replace web_servers with your target hosts.
 
 ## Author
 
-This Ansible role was authored by ***JL Mpande*** and is licensed under [License] (if applicable). For contributions or issues, please visit [https://github.com/JL-Omega/Ansible-project.git].
+This Ansible role was authored by [***JL Mpande***](https://www.linkedin.com/in/jean-luc-mpande-75981a23b/) and is licensed under [License](https://github.com/JL-Omega/Ansible-project/blob/main/LICENSE). For contributions or issues, please contact [LinkedIn](https://www.linkedin.com/in/jean-luc-mpande-75981a23b/).
 
 ## Disclaimer
 This role is provided as-is, without any warranties or guarantees. Users are advised to review and customize it as per their specific requirements and environments.
