@@ -13,9 +13,9 @@ Before running the playbook, ensure the following prerequisites are met:
 
 1. Clone this repository to your local machine:
 
-   ```bash
-   git clone https://github.com/JL-Omega/Ansible-project.git
-```
+```bash
+ git clone https://github.com/JL-Omega/Ansible-project.git
+ ```
 
 2. Navigate to the repository directory:
 
