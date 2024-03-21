@@ -1,2 +1,3 @@
+# group_vars dev
 ansible_user: jean-luc
 ansible_password: 1986
