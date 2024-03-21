@@ -1,5 +1,5 @@
 ---
-# tasks file for web
+# tasks file for webapp
 - name: Ping hosts
   ansible.builtin.ping:
 

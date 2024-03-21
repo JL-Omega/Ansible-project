@@ -1,38 +1,51 @@
-Role Name
-=========
+# Web Application Deployment Role
 
-A brief description of the role goes here.
+This Ansible role is designed to automate the deployment of a web application onto remote hosts. It performs the following tasks:
 
-Requirements
-------------
+## Tasks
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+### 1. Ping Hosts
+- **Description**: Ensures that the hosts are reachable and responsive.
+- **Module Used**: ansible.builtin.ping
 
-Role Variables
---------------
+### 2. Copy Application Files
+- **Description**: Copies the application files from the local machine to the specified directory on the remote host.
+- **Module Used**: ansible.builtin.copy
+- **Source**: app/
+- **Destination**: /home/jean-luc/ansible
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+### 3. Template the Application Index Page
+- **Description**: Templates the application index page using Jinja2 templates and deploys it to the remote host.
+- **Module Used**: ansible.builtin.template
+- **Source Template**: index.html.j2
+- **Destination**: /home/jean-luc/ansible/index.html
 
-Dependencies
-------------
+### 4. Create Apache Container
+- **Description**: Deploys an Apache container using Docker on the remote host to serve the web application.
+- **Module Used**: community.docker.docker_container
+- **Container Name**: apache
+- **Image**: httpd
+- **Restart Policy**: true
+- **Exposed Ports**: 80
+- **Volume Mapping**: /home/jean-luc/ansible:/usr/local/apache2/htdocs/
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+## Usage
 
-Example Playbook
-----------------
+To use this role, include it in your Ansible playbook and provide necessary variables such as hosts, paths, and container configurations as needed.
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+Example playbook snippet:
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+```yaml
+- name: Deploy Web Application
+  hosts: web_servers
+  roles:
+    - webapp
 
-License
--------
+Replace web_servers with your target hosts.
 
-BSD
+## Author
 
-Author Information
-------------------
+This Ansible role was authored by ***JL Mpande*** and is licensed under [License] (if applicable). For contributions or issues, please visit [https://github.com/JL-Omega/Ansible-project.git].
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+## Disclaimer
+This role is provided as-is, without any warranties or guarantees. Users are advised to review and customize it as per their specific requirements and environments.
