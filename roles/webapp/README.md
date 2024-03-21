@@ -40,6 +40,7 @@ Example playbook snippet:
   hosts: web_servers
   roles:
     - webapp
+```
 
 Replace web_servers with your target hosts.
 
