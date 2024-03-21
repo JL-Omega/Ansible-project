@@ -33,10 +33,10 @@ ansible-playbook playbook.yml
 ```
 ## Playbook Structure
 
-. `***playbook.yml:***` Main Ansible playbook file containing tasks for deploying the web application.
-. `***roles/webapp/tasks/main.yml:***` Contains the tasks executed during the deployment process.
-`***group_vars/dev.yml and group_vars/prod.yml:***` Variables specific to development and production environments, including credentials and configurations.
-`***ansible.cfg:***` Ansible configuration file to specify settings like host key checking and inventory file location.
+- `***playbook.yml:***` Main Ansible playbook file containing tasks for deploying the web application.
+- `***roles/webapp/tasks/main.yml:***` Contains the tasks executed during the deployment process.
+- `***group_vars/dev.yml and group_vars/prod.yml:***` Variables specific to development and production environments, including credentials and configurations.
+- `***ansible.cfg:***` Ansible configuration file to specify settings like host key checking and inventory file location.
 
 ## Description of Tasks
 
