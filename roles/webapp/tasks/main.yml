@@ -1,0 +1,25 @@
+---
+# tasks file for web
+- name: Ping hosts
+  ansible.builtin.ping:
+
+- name: Copy application files to the host
+  ansible.builtin.copy:
+    src: app/
+    dest: /home/jean-luc/ansible
+
+- name: Template the application index page
+  ansible.builtin.template:
+    src: index.html.j2
+    dest: /home/jean-luc/ansible/index.html
+
+- name: Create Apache container
+  community.docker.docker_container:
+    name: apache
+    image: httpd
+    restart: true
+    ports:
+      - "80:80" 
+    volumes:
+      - /home/jean-luc/ansible:/usr/local/apache2/htdocs/
+        

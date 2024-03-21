@@ -1,0 +1,5 @@
+---
+- hosts: dev
+  remote_user: jean-luc
+  roles:
+    - webapp
